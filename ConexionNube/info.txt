@@ -1,0 +1,22 @@
+instale nodemon para permitir reiniciar el servidor
+automaticamente cada que gardo algo en el proyecto
+sin necesidad de hacerlo manualmente
+
+comando en terminal: npm i nodemon -D
+
+/*para esto en package.json establecimos un nuevo script*/
+iniciar nodemon: npm run start 
+
+instalares mongoose, es necesario para establecer
+la conexion con mongoDB atlas
+
+comando en terminal:npm i mongoose
+
+mongoose.connect nos pide una uri que es una
+llave que obtendremos desde mongoDB atlas
+
+instalaremos dotenv para almacenar nuestra llave de mongo 
+en de una manera mas segura ya que es incorrecto 
+dejar nuestra llave en el codigo
+
+comando en terminal: npm i dotenv 

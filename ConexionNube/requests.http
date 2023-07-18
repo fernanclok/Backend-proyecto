@@ -1,0 +1,68 @@
+//esto funciona con una extension llamada rest client
+
+//MEDICAMENTOS//
+
+###
+POST http://localhost:9000/api/medicamentos HTTP/1.1
+Content-Type: application/json
+
+{
+    "categoria": 19,
+    "nombre": "Naproxeno",
+    "nombre_cientifico": "Naproxeno",
+    "formula": "C8H9NO3",
+    "cantidad": 50,
+    "fecha_caducidad": "2025-01-24"
+}
+
+###
+GET  http://localhost:9000/api/medicamentos HTTP/1.1
+
+###
+GET  http://localhost:9000/api/medicamentos/64a6f1c622d5f99d4f668786 HTTP/1.1
+
+
+
+###
+GET http://localhost:9000/api/administradores HTTP/1.1
+
+
+//ADMINISTRADORES//
+
+
+###
+POST http://localhost:9000/api/administradores HTTP/1.1
+Content-Type: application/json
+
+{
+  "nombre": "Fernando",
+  "apellPaterno": "Medina",
+  "correo": "fernanclok@gmail.com",
+  "usuario": "fernanclok",
+  "pass": "fer123"
+}
+
+
+//Valores//
+
+###
+GET http://localhost:9000/api/valores HTTP/1.1
+
+###
+GET http://localhost:9000/api/valores/5 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/medicamentos/64a6f1c622d5f99d4f668786 HTTP/1.1
+Content-Type: application/json
+
+{
+    "categoria": "analgecico",
+    "nombre": "Naproxeno",
+    "nombre_cientifico": "Naproxeno",
+    "formula": "C8H9NO3",
+    "cantidad": 100,
+    "fecha_caducidad": "2023-10-20"
+}
+
+###
+DELETE  http://localhost:9000/api/medicamentos/64af77026cbfbbfbd0fe8283 HTTP/1.1

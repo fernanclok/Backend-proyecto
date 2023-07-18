@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>valores</title>
+  </head>
+  <body>
+    <canvas id="MyChart" width="350" height="100"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      var ctx = document.getElementById("MyChart");
+      var MyChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [], // Arreglo para almacenar las etiquetas de tiempo
+          datasets: [
+            {
+              label: "Temperatura",
+              backgroundColor: "red",
+              borderColor: "red",
+              fill: false,
+              data: [],
+            },
+            {
+              label: "Humedad",
+              backgroundColor: "blue",
+              borderColor: "blue",
+              fill: false,
+              data: [],
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              title: {
+                display: true,
+                text: "valores", // Etiqueta del eje y
+              },
+            },
+          },
+        },
+      });
+
+      let url = "http://localhost:9000/api/valores";
+      fetch(url)
+        .then((response) => response.json())
+        .then((datos) => mostrar(datos))
+        .catch((error) => console.error(error));
+
+      const mostrar = (valores) => {
+        const labels = MyChart.data.labels;
+        const datasets = MyChart.data.datasets;
+
+        valores.forEach((element) => {
+          labels.push(""); // Agregar un espacio en blanco como etiqueta en lugar de element._id
+          datasets[0].data.push(element.T); // Agregar valores de "T"
+          datasets[1].data.push(element.RH); // Agregar valores de "RH"
+        });
+
+        MyChart.update(); // Actualizar el gráfico después de agregar los datos
+      };
+    </script>
+  </body>
+</html>
