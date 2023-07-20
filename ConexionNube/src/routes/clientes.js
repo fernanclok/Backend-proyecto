@@ -5,7 +5,7 @@ const router = express.Router();
 
 // Ruta para crear un cliente
 router.post("/clientes", express.urlencoded({ extended: true }), (req, res) => {
-  const cliente = new Clientes(req.body); // Use a different variable name here
+  const cliente = new Clientes(req.body); 
   cliente
     .save()
     .then((data) => {

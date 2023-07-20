@@ -6,27 +6,27 @@ const MedicineSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    categoria: {
+    Categoria: {
       type: Number,
       required: true,
     },
-    nombre: {
+    Nombre: {
       type: String,
       required: true,
     },
-    nombre_cientifico: {
+    Nombre_cientifico: {
       type: String,
       required: true,
     },
-    formula: {
+    Formula: {
       type: String,
       required: true,
     },
-    cantidad: {
+    Cantidad: {
       type: Number,
       required: true,
     },
-    fecha_caducidad: {
+    Fecha_caducidad: {
       type: String,
       required: true,
     }
