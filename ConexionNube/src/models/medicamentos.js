@@ -2,8 +2,12 @@ const mongoose = require('mongoose');
 
 const MedicineSchema = mongoose.Schema(
   {
+    _id: {
+      type: Number,
+      required: true,
+    },
     categoria: {
-      type: String,
+      type: Number,
       required: true,
     },
     nombre: {

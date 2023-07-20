@@ -2,15 +2,15 @@ const mongoose = require("mongoose");
 
 const AdminSchema = mongoose.Schema(
   {
-    id_zona: {
+    _id: {
         type: Number,
         required: true,
     },
-    cuarto: {
+    Cuarto: {
         type: Number,
         required: true,
     },
-    sensores: {
+    Sensores: {
         type: Number,
         required: true,
     },

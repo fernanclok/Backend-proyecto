@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const sensoresSchema = mongoose.Schema(
   {
-    id_sensor: {
+    _id: {
       type: Number,
       required: true,
     },

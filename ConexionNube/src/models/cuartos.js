@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const CuartoSchema = mongoose.Schema(
   {
-    ID_cuarto: {
+    _id: {
         type: Number,
         required: true,
     },

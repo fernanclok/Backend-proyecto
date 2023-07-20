@@ -3,6 +3,20 @@ const valores = require('../models/valores');
 
 const router = express.Router();
 
+//post
+router.post('/valores', express.urlencoded({ extended: true }), (req, res) => {
+  const valor = new valores(req.body); 
+
+  valor
+    .save()
+    .then((data) => {
+      const valoresSinV = data.toObject();
+      delete valoresSinV.__v;
+      console.log(valoresSinV);
+      res.json(valoresSinV);
+    })
+    .catch((error) => res.json({ message: error }));
+});
 // Ruta para obtener todos los administradores
 router.get('/valores', (req, res) => {
   valores

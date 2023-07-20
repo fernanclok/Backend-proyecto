@@ -1,5 +1,5 @@
 const express = require("express");
-const AdministradorScheme = require("../models/administradores"); // Corregir el nombre de archivo del modelo
+const Administrador = require("../models/administradores"); // Corrected model name
 
 const router = express.Router();
 
@@ -21,38 +21,38 @@ router.post(
   }
 );
 
-//obtener todos los administradores
+// Obtener todos los administradores
 router.get("/administradores", (req, res) => {
-  AdministradorScheme.find()
+  Administrador.find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
 
-// obtener un administrador
+// Obtener un administrador por ID
 router.get("/administradores/:id", (req, res) => {
   const { id } = req.params;
-  AdministradorScheme.findById(id)
+  Administrador.findById(id)
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
 
-//actualizar un administrador
-router.get("/administradores/:id", (req, res) => {
+// Actualizar un administrador por ID (using HTTP PUT or PATCH)
+router.put("/administradores/:id", (req, res) => {
   const { id } = req.params;
   const { Nombre, ApellPaterno, ApellMaterno, Correo, Usuario, Password } =
     req.body;
-  AdministradorScheme.updateOne(
-    { id },
+  Administrador.updateOne(
+    { _id: id }, 
     { $set: { Nombre, ApellPaterno, ApellMaterno, Correo, Usuario, Password } }
   )
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
 
-//actualizar un administrador
+// Eliminar un administrador por ID
 router.delete("/administradores/:id", (req, res) => {
   const { id } = req.params;
-  AdministradorScheme.deleteOne({ id })
+  Administrador.deleteOne({ _id: id }) 
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });

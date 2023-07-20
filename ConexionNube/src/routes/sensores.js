@@ -1,26 +1,26 @@
 const express = require("express");
-const sensoresScheme = require("../models/sensores");
+const Sensores = require("../models/sensores"); // Corrected model name
 
 const router = express.Router();
 
-// Ruta para crear un administrador
+// Ruta para crear un sensor
 router.post("/sensores", express.urlencoded({ extended: true }), (req, res) => {
-  const sensores = new sensores(req.body);
-  sensores
+  const sensor = new Sensores(req.body); // Use a different variable name here
+
+  sensor
     .save()
     .then((data) => {
       const sensoresSinV = data.toObject();
-      delete adminSinV.__v;
+      delete sensoresSinV.__v;
       console.log(sensoresSinV);
       res.json(sensoresSinV);
     })
     .catch((error) => res.json({ message: error }));
 });
 
-//obtener todos los administradores
+// Obtener todos los sensores
 router.get("/sensores", (req, res) => {
-  sensoresScheme
-    .find()
+  Sensores.find()
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });

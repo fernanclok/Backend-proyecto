@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const ValoresSchema = mongoose.Schema(
   {
+    _id: {
+        type: Number,
+        required: true,
+    },
     Zona: {
         type: Number,
         required: true,

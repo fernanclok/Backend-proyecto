@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const AdminSchema = mongoose.Schema(
   {
+    _id: {
+        type: Number,
+        required: true,
+    },
     Empresa: {
         type: String,
         required: true,
