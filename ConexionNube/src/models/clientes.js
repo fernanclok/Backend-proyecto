@@ -1,11 +1,7 @@
 const mongoose = require("mongoose");
 
-const AdminSchema = mongoose.Schema(
+const ClientesSchema = mongoose.Schema(
   {
-    _id: {
-        type: Number,
-        required: true,
-    },
     Empresa: {
         type: String,
         required: true,
@@ -21,4 +17,4 @@ const AdminSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("clientes", AdminSchema);
+module.exports = mongoose.model("clientes", ClientesSchema);

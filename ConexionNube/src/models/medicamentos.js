@@ -2,31 +2,27 @@ const mongoose = require('mongoose');
 
 const MedicineSchema = mongoose.Schema(
   {
-    _id: {
-      type: Number,
-      required: true,
-    },
-    Categoria: {
-      type: Number,
-      required: true,
-    },
-    Nombre: {
+    categoria: {
       type: String,
       required: true,
     },
-    Nombre_cientifico: {
+    nombre: {
       type: String,
       required: true,
     },
-    Formula: {
+    nombre_cientifico: {
       type: String,
       required: true,
     },
-    Cantidad: {
+    formula: {
+      type: String,
+      required: true,
+    },
+    cantidad: {
       type: Number,
       required: true,
     },
-    Fecha_caducidad: {
+    fecha_caducidad: {
       type: String,
       required: true,
     }

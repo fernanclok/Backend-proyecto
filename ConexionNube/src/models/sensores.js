@@ -4,10 +4,6 @@ const mongoose = require("mongoose");
 
 const sensoresSchema = mongoose.Schema(
   {
-    _id: {
-      type: Number,
-      required: true,
-    },
     N_encargado: {
         type: Number,
         required: true,

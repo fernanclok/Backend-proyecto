@@ -1,11 +1,7 @@
 const mongoose = require("mongoose");
 
-const AdminSchema = mongoose.Schema(
+const ZonaSchema = mongoose.Schema(
   {
-    _id: {
-        type: Number,
-        required: true,
-    },
     Cuarto: {
         type: Number,
         required: true,
@@ -21,4 +17,4 @@ const AdminSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("zona", AdminSchema);
+module.exports = mongoose.model("zona", ZonaSchema);

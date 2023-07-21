@@ -7,8 +7,7 @@ POST http://localhost:9000/api/medicamentos HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": 1,
-    "categoria": 19,
+    "categoria": "analgecico",
     "nombre": "Naproxeno",
     "nombre_cientifico": "Naproxeno",
     "formula": "C8H9NO3",
