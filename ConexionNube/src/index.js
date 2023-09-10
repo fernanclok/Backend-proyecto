@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 mongoose
-  .connect("mongodb+srv://PruebaWeb:pruebaweb@cluster0.lolgdgf.mongodb.net/farmacia?retryWrites=true&w=majority")
+  .connect("") //aqui va la cadena de conexion de mongoDB Atlas o MongoDB Compass
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((error) => console.error(error));
 
