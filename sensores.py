@@ -4,7 +4,7 @@ from pymongo import MongoClient
 from bson import ObjectId
 
 # Conexión a la base de datos en la nube (MongoDB Atlas)
-cloud_uri = "mongodb+srv://PruebaWeb:pruebaweb@cluster0.lolgdgf.mongodb.net/?retryWrites=true&w=majority"
+cloud_uri = "" #aqui va nuestra cadena de conexion
 cloud_client = MongoClient(cloud_uri)
 cloud_db = cloud_client["farmacia"]
 cloud_collection = cloud_db["valores"]
